@@ -1,4 +1,4 @@
-from random import choice
+from random import choice , randint
 
 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@_-#"
 
