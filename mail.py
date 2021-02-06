@@ -5,6 +5,7 @@ Mail to send Password
 from os import environ 
 from smtplib import SMTP
 from passwd import genPwd
+from random import randint
 
 email, pwd = environ['EMAIL'].split()
 
@@ -18,7 +19,7 @@ def mailSend(rec):
     #Login to email services
     smtp.login(email , pwd)
 
-    msg = "Hi " + rec + ",\nthanks for using our services and best wishes for the days ahead\nYour password is : " + genPwd(randint(6 , 8))
+    msg = "Hi " + rec + ",\nThanks for using our services and best wishes for the days ahead\nYour password is : " + genPwd(randint(6 , 8))
     #Send Mail
     smtp.sendmail(email , rec , msg)
 
