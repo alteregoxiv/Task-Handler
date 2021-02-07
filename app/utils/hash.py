@@ -6,6 +6,3 @@ def hashed(pwd):
 def verify(pwd , hasche):
     return pbkdf2_sha256.verify(pwd , hasche)
 
-p = hashed("Ahobaka1234")
-print(p)
-print(verify("Ahobaka1234" , p))
