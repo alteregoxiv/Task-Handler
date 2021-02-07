@@ -1,5 +1,6 @@
 """
-USING JINJA2 TEMPLATE """
+USING JINJA2 TEMPLATE 
+"""
 
 from jinja2 import (
     Environment,
@@ -8,7 +9,7 @@ from jinja2 import (
 )
 
 env = Environment(
-    loader = FileSystemLoader('../views'),
+    loader = FileSystemLoader('app/views'),
     autoescape = select_autoescape(['html'])
 )
 
