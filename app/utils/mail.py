@@ -2,13 +2,12 @@
 Mail to send Password
 """
 
-from os import environ 
+from taskHandler.app.env.env import email , pwd
 from smtplib import SMTP
 from random import randint
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-email, pwd = environ['EMAIL'].split()
 
 print(email, pwd)
 
