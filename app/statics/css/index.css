@@ -4,6 +4,10 @@
    box-sizing: border-box;
 }
 
+nav {
+   font-family: 'Pangolin', cursive;
+}
+
 .col img {
 
     width: 70%;
