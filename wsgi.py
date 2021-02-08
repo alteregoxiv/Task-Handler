@@ -3,8 +3,9 @@ App setup and firing wsgi server
 """
 
 from app.setup import setup
-
 setup()
+
+# Fire the server
 
 from app.routes.routes import app
  
