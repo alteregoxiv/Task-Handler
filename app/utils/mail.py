@@ -13,7 +13,7 @@ email, pwd = environ['EMAIL'].split()
 
 print(email, pwd)
 
-def mailSend(rec):
+def mailSend(rec , newPwd):
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = 'Password for your Account'
@@ -25,7 +25,7 @@ def mailSend(rec):
     #Login to email services
     smtp.login(email , pwd)
 
-    content = "Hi " + rec + ",\nThanks for using our services and best wishes for the days ahead\nYour password is : " + genPwd(randint(6 , 8))
+    content = "Hi " + rec + ",\nThanks for using our services and best wishes for the days ahead\nYour password is : " + newPwd
     msg['To'] = rec
     mail_content = MIMEText(content , 'plain')
     msg.attach(mail_content)
