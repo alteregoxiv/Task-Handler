@@ -6,5 +6,5 @@ app = itty3.App()
 
 @app.get("/")
 def index(request):
-    return app.render(request , "MIJN")
+    return app.render(request , template("index.html"))
 
