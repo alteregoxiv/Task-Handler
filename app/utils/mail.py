@@ -4,7 +4,6 @@ Mail to send Password
 
 from os import environ 
 from smtplib import SMTP
-from passwd import genPwd
 from random import randint
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
