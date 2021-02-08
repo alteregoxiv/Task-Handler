@@ -8,10 +8,22 @@ nav {
    font-family: 'Pangolin', cursive;
 }
 
+nav img {
+    filter: invert(100%);
+}
+
+.col {
+}
+
 .col img {
 
-    width: 70%;
-    height: 70%;
-    margin-top: 10%;
+    width: 50%;
+    height: 50%;
+    margin: 10% 15%;
 
+}
+
+.col h2 {
+    margin: 2% 25%;
+    font-family: 'Pangolin', cursive;
 }
