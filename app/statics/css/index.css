@@ -79,6 +79,12 @@ input[type="password"] {
 
 }
 
+.nav-link {
+   cursor: pointer;
+}
+
+
+
 
 @media screen and (max-width: 991px) {
         .left {
