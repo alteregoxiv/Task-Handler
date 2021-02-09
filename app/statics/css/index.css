@@ -47,9 +47,13 @@ nav {
 
 
 .signin #user{
+    margin-bottom: 5%;
+}
 
-    padding-bottom: 0%;
-
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+        width: 50%;
 }
 
 .signin{

@@ -1,0 +1,8 @@
+function validateUserName() {
+
+}
+
+
+function validateEmail() {
+
+}
