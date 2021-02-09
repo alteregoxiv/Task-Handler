@@ -8,9 +8,9 @@ nav {
    font-family: 'Pangolin', cursive;
 }
 
-nav img {
+/* nav img {
     filter: invert(100%);
-}
+} */
 
 .col {
 }
@@ -26,4 +26,16 @@ nav img {
 .col h2 {
     margin: 2% 25%;
     font-family: 'Pangolin', cursive;
+}
+
+.col.left{
+
+    border-right: 1px solid black;
+
+}
+
+.row{
+
+    margin-top: 2%;
+
 }
