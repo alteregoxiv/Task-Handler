@@ -116,7 +116,19 @@
                                 tab[index ^ 1].classList.remove("active")
                                 tab[index].classList.add("active")
                         }
-                        
+
+                        if(signin.classList.contains("active") && index===1){
+
+                                signin.classList.remove("active")
+                                signup.classList.add("active");
+
+                        }
+                        if(signup.classList.contains("active") && index===0){
+
+                                signup.classList.remove("active")
+                                signin.classList.add("active")
+
+                        }
                         
         </script>
 
