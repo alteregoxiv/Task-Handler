@@ -62,7 +62,7 @@
                                                 
                                         </ul>
 
-                                        <div class="signin">
+                                        <div class="signin active">
 
                                                 <form method="post" action="/login">
                                                         <label for="user">Username:-</label>
@@ -108,13 +108,16 @@
         <script>
                 function tabSwitcher(index) {
                         tab = document.getElementsByClassName("nav-link")
-                        if(tab[index].classList.contains("active"))
+                        signin = document.getElementsByClassName('signin')
+                        signup = document.getElementsByClassName('signin')
+                        if (tab[index].classList.contains("active"))
                                 return
-                        else{
+                        else {
                                 tab[index ^ 1].classList.remove("active")
                                 tab[index].classList.add("active")
                         }
-                }
+                        
+                        
         </script>
 
 </body>

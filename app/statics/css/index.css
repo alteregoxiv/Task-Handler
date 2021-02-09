@@ -80,9 +80,20 @@ input[type="password"] {
 }
 
 .nav-link {
-   cursor: pointer;
+     cursor: pointer;
 }
 
+.signin.active,
+.signup.active {
+        opacity: 1;
+        pointer-events: all;
+}
+
+.signup,
+.signin {
+        opacity: 0;
+        pointer-events: none;
+}
 
 
 
