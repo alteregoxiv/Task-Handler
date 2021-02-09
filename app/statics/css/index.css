@@ -110,4 +110,12 @@ form p {
         .left {
                 border: none;
         }
+
+        .left #liner {
+                font-size: 4vw;
+        }
+
+        .left #title {
+                font-size: 6vw;
+        }
 }
