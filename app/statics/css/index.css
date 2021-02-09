@@ -18,13 +18,23 @@ nav {
     width: 50%;
     height: 50%;
     margin: 10% 15%;
+    margin-left: 22%;
+    margin-top: 5%;
 
 }
 
 .left #title {
     margin: auto 25%;
     font-family: 'Pangolin', cursive;
-    font-size: 5vw;
+    font-size: 4vw;
+}
+
+.left #liner{
+
+    margin: auto;
+    font-family: 'Pangolin' , cursive;
+    font-size: 2vw;
+
 }
 
 .left {
