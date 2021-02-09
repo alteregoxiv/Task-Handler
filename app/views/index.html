@@ -53,11 +53,11 @@
                                         <ul class="nav nav-tabs">
 
                                                 <li class="nav-item">
-                                                        <span class="nav-link active">Sign In</span>
+                                                        <span class="nav-link active" onclick="tabSwitcher(0)">Sign In</span>
                                                 </li>
 
                                                 <li class="nav-item">
-                                                        <span class="nav-link">Sign Up</span>
+                                                        <span class="nav-link" onclick="tabSwitcher(1)">Sign Up</span>
                                                 </li>
                                                 
                                         </ul>
@@ -107,7 +107,13 @@
         </main>
         <script>
                 function tabSwitcher(index) {
-
+                        tab = document.getElementsByClassName("nav-link")[0]
+                        if(tab[index].classList.contains("active"))
+                                return
+                        else{
+                                tab[index ^ 1].classList.remove("active")
+                                tab[index].classList.add("active")
+                        }
                 }
         </script>
 
