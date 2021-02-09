@@ -110,12 +110,12 @@
                         tab = document.getElementsByClassName("nav-link")
                         signin = document.getElementsByClassName('signin')[0]
                         signup = document.getElementsByClassName('signup')[0]
-                        // if (tab[index].classList.contains("active"))
-                        //         return
-                        // else {
-                        //         tab[index ^ 1].classList.remove("active")
-                        //         tab[index].classList.add("active")
-                        // }
+                         if (tab[index].classList.contains("active"))
+                                 return
+                         else {
+                                 tab[index ^ 1].classList.remove("active")
+                                 tab[index].classList.add("active")
+                         }
 
                         // if(signin.classList.contains("active") && index===1){
 
@@ -134,26 +134,23 @@
 
                                 if(signin.classList.contains("active"))
                                         return
-                                else{
 
-                                        signin.classList.add("activate")
-                                        signup.classList.remove("active")
+                                signin.classList.add("active")
+                                signup.classList.remove("active")
 
-                                }
 
                         }
                         else{
 
                                 if(signup.classList.contains("active"))
                                         return
-                                else{
 
-                                        signup.classList.add("activate")
-                                        signin.classList.remove("active")
+                                signup.classList.add("active")
+                                signin.classList.remove("active")
 
-                                }
 
                         }
+                }
                         
         </script>
 
