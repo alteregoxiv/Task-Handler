@@ -12,10 +12,8 @@ nav {
     filter: invert(100%);
 } */
 
-.col {
-}
 
-.col img {
+.left img {
 
     width: 50%;
     height: 50%;
@@ -23,19 +21,34 @@ nav {
 
 }
 
-.col h2 {
-    margin: 2% 25%;
+.left #title {
+    margin: auto 25%;
     font-family: 'Pangolin', cursive;
+    font-size: 5vw;
 }
 
-.col.left{
+.left {
 
     border-right: 1px solid black;
 
 }
 
-.row{
+.row {
 
     margin-top: 2%;
 
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 991px) {
+        .left {
+                border: none;
+        }
 }
