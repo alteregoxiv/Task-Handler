@@ -52,11 +52,11 @@
                                         <ul class="nav nav-tabs">
 
                                                 <li class="nav-item">
-                                                  <a class="nav-link active" href="#">Sign In</a>
+                                                        <span class="nav-link active">Sign In</span>
                                                 </li>
 
                                                 <li class="nav-item">
-                                                  <a class="nav-link" href="#">Sign Up</a>
+                                                        <span class="nav-link">Sign Up</span>
                                                 </li>
                                                 
                                         </ul>
@@ -64,15 +64,17 @@
                                         <div class="signin">
 
                                                 <form method="post" action="/login">
-                                                        <p id="user">Username:-</p>
-                                                        <label for="user"><input type="text"></label>
-
-                                                        <p id="pass">Password:-</p>
-                                                        <input type="text">
+                                                        <label for="user">Username:-</label>
+                                                        <input type="text" name="user" id="user" placeholder="username">
 
                                                         <br>
-                                                        <input type="checkbox" id="days"><label for="days">Keep me signed in for 30 days</label>
+                                                        <label for="password">Password:-</label>
+                                                        <input type="password" name="password" id="password" placeholder="password">
 
+                                                        <br>
+                                                        <input type="checkbox" id="days" name="remind"><label for="days">Keep me signed in for 30 days</label>
+
+                                                        <br>
                                                         <button type="submit" class="btn btn-dark">Dark</button>
 
                                                 </form>
@@ -82,12 +84,14 @@
                                         <div class="signup">
 
                                                 <form method="post" action="/signup">
-                                                        <p id="user">Username:-</p>
-                                                        <input type="text">
+                                                        <label for="user">Username:-</label>
+                                                        <input type="text" name="user" id="user" placeholder="username">
 
-                                                        <p id="pass">Password:-</p>
-                                                        <input type="text">
+                                                        <br>
+                                                        <label for="email">Email:-</label>
+                                                        <input type="email" name="email" id="email" placeholder="youremail@provider.com">
 
+                                                        <br>
                                                         <button type="submit" class="btn btn-dark">Dark</button>
                                                 </form>
 
