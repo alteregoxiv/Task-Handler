@@ -54,6 +54,10 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
         width: 50%;
+        height: 40px;
+        padding: 3px;
+        border-radius: 10px;
+        border: 1px solid black;
 }
 
 .signin{
@@ -94,6 +98,11 @@ input[type="password"] {
         opacity: 0;
         pointer-events: none;
 }
+
+form p {
+        color: red;
+}
+
 
 
 

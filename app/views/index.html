@@ -24,7 +24,7 @@
 </head>
 <body>
         
-        <script type="text/js" src="/static/js/validate.js"></script>
+        <script src="/static/js/validate.js"></script>
                 <!-- Image and text -->
                 <nav class="navbar navbar-dark bg-dark">
                         <a class="navbar-brand" href="/">
@@ -65,8 +65,10 @@
                                         <div class="signin active">
 
                                                 <form method="post" action="/login">
-                                                        <label for="user">Username:-</label>
-                                                        <input type="text" name="user" id="user" placeholder="username">
+                                                        <label for="username">Username:-</label>
+                                                        <input type="text" name="user" id="username" placeholder="username" onblur="validateUserName(this, 'invalid-username')">
+
+                                                        <p id="invalid-username"></p>
 
                                                         <br>
                                                         <label for="password">Password:-</label>
@@ -86,14 +88,20 @@
 
                                                 <form method="post" action="/signup">
                                                         <label for="user">Username:-</label>
-                                                        <input type="text" name="user" id="user" placeholder="username">
+                                                        <input type="text" name="user" id="user" placeholder="username" onblur="validateSignUpUserName(this)">
+
+
+                                                        <p id="invalid-user"></p>
 
                                                         <br>
                                                         <label for="email">Email:-</label>
-                                                        <input type="email" name="email" id="email" placeholder="youremail@provider.com">
+                                                        <input type="email" name="email" id="email" placeholder="youremail@provider.com" onblur="validateEmail(this)">
+                                                        <p id="invalid-email"></p>
 
                                                         <br>
                                                         <button type="submit" class="btn btn-dark">SUBMIT</button>
+
+                                                        <p id="invalid-credentials"></p>
                                                 </form>
 
                                         </div>
@@ -116,19 +124,6 @@
                                  tab[index ^ 1].classList.remove("active")
                                  tab[index].classList.add("active")
                          }
-
-                        // if(signin.classList.contains("active") && index===1){
-
-                        //         signin.classList.remove("active")
-                        //         signup.classList.add("active");
-
-                        // }
-                        // if(signup.classList.contains("active") && index===0){
-
-                        //         signup.classList.remove("active")
-                        //         signin.classList.add("active")
-
-                        // }
 
                         if(index===0){
 
