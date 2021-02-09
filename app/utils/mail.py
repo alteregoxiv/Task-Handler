@@ -8,8 +8,7 @@ from random import randint
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-
-print(email, pwd)
+# print(email, pwd)
 
 def mailSend(rec , newPwd):
 
@@ -31,6 +30,6 @@ def mailSend(rec , newPwd):
     #Send Mail
     smtp.sendmail(email , rec , msg.as_string())
 
-    print(f"Mail sent to {rec}")
+    print("Mail sent to %s" %rec)
 
     smtp.quit()
