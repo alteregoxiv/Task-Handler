@@ -83,8 +83,15 @@ input[type="password"] {
 
 }
 
-.nav-link {
+.ri8 .nav-link.active {
      cursor: pointer;
+     background: #fff;
+     color: #0f0f0f;
+}
+
+.ri8 .nav-link{
+     cursor: pointer;
+     background: #dfdfdf;
 }
 
 .signin.active,
