@@ -96,6 +96,25 @@ form p {
 }
 
 
+.signin{
+
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+
+.signin #days{
+
+    margin-top: 2%;
+
+}
+
+.signup{
+
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
 
 
 @media screen and (max-width: 991px) {
