@@ -65,37 +65,20 @@
                                         <div class="signin active">
 
                                                 <form method="post" action="/login">
-                                                        <!-- <table>
-
-                                                                <tr>
-
-                                                                        <td><label for="username">Username:-</label></td>
-                                                                        <td><input type="text" name="user" id="username" placeholder="username" onblur="validateUserName(this, 'invalid-username')"></td>
-
-
-                                                                </tr>
-
-                                                                <tr>
-
-                                                                        <td><label for="password">Password:-</label></label></td>
-                                                                        <td><input type="text" name="user" id="username" placeholder="username" onblur="validateUserName(this, 'invalid-username')"></td>
-
-
-                                                                </tr>
-
-                                                        </table> -->
 
                                                         <label for="username">Username:-</label>
-                                                        <input type="text" name="user" id="username" placeholder="username" onblur="validateUserName(this, 'invalid-username')">
+                                                        <input type="text" name="user" id="username" placeholder="username" required onblur="validateUserName(this, 'invalid-username')">
 
                                                         <p id="invalid-username"></p>
 
                                                         <br>
                                                         <label for="password">Password:-</label>
-                                                        <input type="password" name="password" id="password" placeholder="password">
+                                                        <input type="password" name="password" id="password" placeholder="password" required> 
 
                                                         <br>
                                                         <input type="checkbox" id="remember" name="remember"><label id="days" for="remember">Keep me signed in for 30 days</label>
+
+                                                        <p id="invalid-credentials"></p>
 
                                                         <br>
                                                         <button type="submit" class="btn btn-dark">Login</button>
@@ -108,20 +91,19 @@
 
                                                 <form method="post" action="/signup">
                                                         <label for="user">Username:-</label>
-                                                        <input type="text" name="user" id="user" placeholder="username" onblur="validateSignUpUserName(this)">
+                                                        <input type="text" name="user" id="user" placeholder="username" required onblur="validateSignUpUserName(this)">
 
 
                                                         <p id="invalid-user"></p>
 
                                                         <br>
                                                         <label for="email">Email:-</label>
-                                                        <input type="email" name="email" id="email" placeholder="youremail@provider.com" onblur="validateEmail(this)">
+                                                        <input type="email" name="email" id="email" placeholder="youremail@provider.com"  required onblur="validateEmail(this)">
                                                         <p id="invalid-email"></p>
 
                                                         <br>
                                                         <button type="submit" class="btn btn-dark">Sign Up</button>
 
-                                                        <p id="invalid-credentials"></p>
                                                 </form>
 
                                         </div>
