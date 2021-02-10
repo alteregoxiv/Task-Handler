@@ -31,6 +31,9 @@ function validateSignUpUserName(self) {
 
 function validateEmail(self) {
 
+        if (!document.getElementsByTagName('form')[1].reportValidity())
+                return;
+
         let warning = document.getElementById('invalid-email')
         if (self.value === '') {
                 hideWarning(self, warning)
