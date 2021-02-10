@@ -123,6 +123,13 @@ label:not(#days) {
 
 }
 
+::selection{
+
+    color: #fff;
+    background-color: #5f5f5f;
+
+}
+
 @media screen and (max-width: 991px) {
         .left {
                 border: none;
