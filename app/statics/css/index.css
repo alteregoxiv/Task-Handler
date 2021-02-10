@@ -116,7 +116,7 @@ form p {
 
 }
 
-label{
+label:not(#days) {
 
     display: inline-block;
     width: 10vw;
@@ -136,7 +136,7 @@ label{
                 font-size: 6vw;
         }
 
-        label{
+        label:not(#days) {
 
             display: inline-block;
             width: 25vw;
