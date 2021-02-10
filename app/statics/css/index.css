@@ -60,21 +60,17 @@ input[type="password"] {
         border: 1px solid black;
 }
 
-.signin{
-
+.signin,
+.signup {
     font-family: 'Pangolin' , cursive;
     font-size: large;
-
+    display: none;
 }
 
-
-.signup{
-
-    font-family: 'Pangolin' , cursive;
-    font-size: large;
-
+.signin.active,
+.signup.active {
+        display: block;
 }
-
 
 .nav{
 
@@ -94,17 +90,6 @@ input[type="password"] {
      background: #dfdfdf;
 }
 
-.signin.active,
-.signup.active {
-        opacity: 1;
-        pointer-events: all;
-}
-
-.signup,
-.signin {
-        opacity: 0;
-        pointer-events: none;
-}
 
 form p {
         color: red;
