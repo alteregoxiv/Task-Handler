@@ -23,6 +23,9 @@ function signinSubmit(form){
     u = form.elements[0];
     p = form.elements[1];
 
+    if(u.style.background.includes("rgba(240, 0, 0, 0.1)"))
+        return false;
+
     if(u.value===""){
         showWarning(
                 u , 
@@ -41,12 +44,18 @@ function signinSubmit(form){
         return false;
     }
 
+    form.submit();
+
 }
 
 function signupSubmit(form){
 
     u = form.elements[0];
     e = form.elements[1];
+
+    if(u.style.background != "rgba(240, 0, 0, 0.1)")
+        return false;
+
 
     if(u.value===""){
         showWarning(
@@ -64,6 +73,8 @@ function signupSubmit(form){
             "E-Mail Required"
         );
         return false;
-        }
+    }
+
+    form.submit();
 
 }
