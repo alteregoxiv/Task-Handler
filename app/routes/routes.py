@@ -15,7 +15,7 @@ def index(request):
     return app.render(request , template("index.html"))
 
 
-@app.post("/verifypassword")
+@app.post("/verify-password")
 def signup(request):
     if 'user' not in request.POST and 'email' not in request.POST:
         app.error_404(request)
