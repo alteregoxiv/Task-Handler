@@ -22,7 +22,7 @@
         
         <link rel="stylesheet" href="/static/css/index.css">
 </head>
-<body>
+<body onload="clearFields()>
         
         <script src="/static/js/validate.js"></script>
         <script src="/static/js/formsubmit.js"></script>
@@ -92,7 +92,7 @@
 
                                         <div class="signup">
 
-                                                <form method="post" action="/verifypassword">
+                                                <form method="post" action="/verify-password">
                                                         <label for="user">Username:-</label>
                                                         <input type="text" name="user" id="user" placeholder="username"  onblur="validateSignUpUserName(this)">
 
@@ -119,6 +119,9 @@
 
         </main>
         <script>
+                function clearFields() {
+                        document.forms[1].reset();               
+                }                                                                                                                             
                 function tabSwitcher(index) {
                         let tab = document.getElementsByClassName("nav-link")
                         let signin = document.getElementsByClassName('signin')[0]
