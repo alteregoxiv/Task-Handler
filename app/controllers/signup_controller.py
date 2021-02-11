@@ -15,6 +15,3 @@ def email_pwd(user, email):
 
 def verify_pwd(user, email, hash_pwd, pwd):
     pass
-
-if 'user' not in request.POST and 'email' not in request.POST:
-   hash_pwd  = email_pwd(user , email)
