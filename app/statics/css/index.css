@@ -118,6 +118,12 @@ label:not(#days) {
 
 }
 
+button{
+
+    font-size:1.5vw!important;
+
+}
+
 @media screen and (max-width: 991px) {
         .left {
                 border: none;

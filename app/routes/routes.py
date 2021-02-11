@@ -3,7 +3,7 @@ All routes of app is defined
 """
 
 from taskHandler.app.utils.template import template
-from app.controllers.signupController import 
+from app.controllers.signupController import emailPwd
 
 import itty3
 
