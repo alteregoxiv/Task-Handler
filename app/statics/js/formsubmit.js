@@ -6,7 +6,7 @@ function signinSubmit(form){
     u = form.elements[0];
     p = form.elements[1];
 
-    if(u.value==""){
+    if(u.value===""){
         showWarning(
                 u , 
                 document.getElementById("invalid-username"),
@@ -15,7 +15,7 @@ function signinSubmit(form){
         return false;
     }
 
-    if(p.value=""){
+    if(p.value===""){
         showWarning(
             u , 
             document.getElementById("invalid-password"),
@@ -31,7 +31,7 @@ function signupSubmit(form){
     u = form.elements[0];
     e = form.elements[1];
 
-    if(u.value==""){
+    if(u.value===""){
         showWarning(
                 u , 
                 document.getElementById("invalid-user"),
@@ -40,7 +40,7 @@ function signupSubmit(form){
             return false;
     }
 
-    if(e.value=""){
+    if(e.value===""){
         showWarning(
             u , 
             document.getElementById("invalid-email"),
