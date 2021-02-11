@@ -53,10 +53,6 @@ function signupSubmit(form){
     u = form.elements[0];
     e = form.elements[1];
 
-    if(u.style.background != "rgba(240, 0, 0, 0.1)")
-        return false;
-
-
     if(u.value===""){
         showWarning(
                 u , 
@@ -75,6 +71,8 @@ function signupSubmit(form){
         return false;
     }
 
-    form.submit();
+    if(u.style.background !== "rgba(0, 255, 0, 0.1)")
+        form.submit();
+
 
 }

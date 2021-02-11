@@ -21,7 +21,7 @@ def signup(request):
 
 @app.get("/validate")
 def validate(request):
-    is_valid = "invalid"
+    is_valid = "valid"
     return app.render_json(
         request,
         data = dict(valid=is_valid),
