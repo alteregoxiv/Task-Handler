@@ -3,7 +3,7 @@ All routes of app is defined
 """
 
 from taskHandler.app.utils.template import template
-from taskHandler.app.controllers.signupController import email_pwd
+from taskHandler.app.controllers.signup_controller import email_pwd
 
 import itty3
 
@@ -17,10 +17,18 @@ def index(request):
 
 @app.post("/signup")
 def signup(request):
-    return app.render(request, template("info.html"))
     if 'user' not in request.POST and 'email' not in request.POST:
-        pass
+        app.error_404(request)
+    user = request.POST['user']
+    email = request.POST['email']
     hash_pwd  = email_pwd(user , email)
+    return app.render(request, 
+                      template("info.html",
+                                user = user,
+                                email = email,
+                                hash = hash_pwd
+                              )
+                     )
 
 
 @app.get("/validate")
