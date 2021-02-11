@@ -1,6 +1,23 @@
 "rgba(240, 0, 0, 0.1) none repeat scroll 0% 0%"
 "rgba(0, 0, 0, 0) none repeat scroll 0% 0%"
 
+
+function validatePassword(self){
+
+    if(self.value !== ""){
+
+        hideWarning(
+
+            self,
+            document.getElementById("invalid-password")
+
+        );
+
+    }
+
+}
+
+
 function signinSubmit(form){
 
     u = form.elements[0];
@@ -17,7 +34,7 @@ function signinSubmit(form){
 
     if(p.value===""){
         showWarning(
-            u , 
+            p , 
             document.getElementById("invalid-password"),
             "Password Required"
         );
@@ -42,7 +59,7 @@ function signupSubmit(form){
 
     if(e.value===""){
         showWarning(
-            u , 
+            e , 
             document.getElementById("invalid-email"),
             "E-Mail Required"
         );
