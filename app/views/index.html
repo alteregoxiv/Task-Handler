@@ -25,6 +25,7 @@
 <body>
         
         <script src="/static/js/validate.js"></script>
+        <script src="/static/js/formsubmit.js"></script>
                 <!-- Image and text -->
                 <nav class="navbar navbar-dark bg-dark">
                         <a class="navbar-brand" href="/">
@@ -75,13 +76,15 @@
                                                         <label for="password">Password:-</label>
                                                         <input type="password" name="password" id="password" placeholder="password" > 
 
+                                                        <p id="invalid-password"></p>
+
                                                         <br>
                                                         <input type="checkbox" id="remember" name="remember"><label id="days" for="remember">Keep me signed in for 30 days</label>
 
                                                         <p id="invalid-credentials"></p>
 
                                                         <br>
-                                                        <button type="submit" class="btn btn-dark">Login</button>
+                                                        <button type="button" class="btn btn-dark" onclick="signinSubmit(this.form)">Login</button>
 
                                                 </form>
 
@@ -93,16 +96,16 @@
                                                         <label for="user">Username:-</label>
                                                         <input type="text" name="user" id="user" placeholder="username"  onblur="validateSignUpUserName(this)">
 
-
                                                         <p id="invalid-user"></p>
 
                                                         <br>
                                                         <label for="email">Email:-</label>
                                                         <input type="email" name="email" id="email" placeholder="youremail@provider.com"   onblur="validateEmail(this)">
+
                                                         <p id="invalid-email"></p>
 
                                                         <br>
-                                                        <button type="submit" class="btn btn-dark">Sign Up</button>
+                                                        <button type="button" class="btn btn-dark" onclick="signuoSubmit(this.form)>Sign Up</button>
 
                                                 </form>
 
