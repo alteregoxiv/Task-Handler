@@ -15,3 +15,6 @@ def email_pwd(user, email):
 
 def verify_pwd(user, email, hash_pwd, pwd):
     pass
+
+def adduser(user , email , hash_pwd):
+    pass
