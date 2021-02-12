@@ -43,10 +43,10 @@ def signup(request):
     print(hash_pwd)
     print(passwd)
     if not(verify_pwd(hash_pwd, passwd)):
-        app.redirect(request , "/")
+        return app.redirect(request , "/")
     else:
         adduser(user , email , hash_pwd)
-        app.redirect(request , "/")
+        return app.redirect(request , "/")
     
 
 
