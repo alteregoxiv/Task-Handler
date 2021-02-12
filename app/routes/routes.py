@@ -19,10 +19,11 @@ def index(request):
 def verifypass(request):
     if 'user' not in request.POST and 'email' not in request.POST:
         app.error_404(request)
+
     user = request.POST['user']
     email = request.POST['email']
-    hash_pwd  = email_pwd(user , email)
-    print(hash_pwd)
+    hash_pwd  = email_pwd(email)
+   
     return app.render(request, 
                       template("verify.html",
                                 user = user,
@@ -40,14 +41,12 @@ def signup(request):
     email = request.POST['email']
     hash_pwd = request.POST['hash']
     passwd = request.POST['password']
-    print(hash_pwd)
-    print(passwd)
+    
     if not(verify_pwd(hash_pwd, passwd)):
         return app.redirect(request , "/")
     else:
         adduser(user , email , hash_pwd)
         return app.redirect(request , "/")
-    
 
 
 @app.get("/validate")
@@ -55,6 +54,25 @@ def validate(request):
     is_valid = "valid"
     return app.render_json(
         request,
-        data = dict(valid=is_valid),
+        data = dict(valid = is_valid),
+        content_type = "application/json"
+    )
+
+
+@app.get("/resend-password")
+def resend_pwd(request):
+    if 'email' not in request.GET:
+        return app.render_json(
+            request,
+            data = dict(),
+            content_type = "application/json"
+        )
+
+    email = request.GET['email']
+    hash_pwd = email_pwd(email)
+    
+    return app.render_json(
+        request,
+        data = dict(hash = hash_pwd),
         content_type = "application/json"
     )

@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="/static/css/info.css">
 </head>
 <body>
-        
+        <script src="/static/js/resend.js"></script>
                 <!-- Image and text -->
                 <nav class="navbar navbar-dark bg-dark">
                         <a class="navbar-brand" href="/">
@@ -47,6 +47,7 @@
                                         <input type="hidden" name="hash" value="{{hash}}">
                                         <input type="password" name="password" id="pwd" required placeholder="Password">
                                         <button type="submit" class="btn btn-dark" id="sub">Verify</button>
+                                        <button type="button" class="btn btn-dark" onclick="resendPassword(this.form)">Resend(2)</button>
 
                                 </form>
 

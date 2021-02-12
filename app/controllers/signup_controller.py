@@ -6,7 +6,7 @@ from taskHandler.app.utils.hash import hashed, verify
 from taskHandler.app.utils.passwd import genCode
 from taskHandler.app.utils.mail import mailSend
 
-def email_pwd(user, email):
+def email_pwd(email):
     pwd = genCode()
     mailSend(email, pwd)
     hash_pwd = hashed(pwd)
