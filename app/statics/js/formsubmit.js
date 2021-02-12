@@ -71,7 +71,7 @@ function signupSubmit(form){
         return false;
     }
 
-    if(u.style.background !== "rgba(0, 255, 0, 0.1)")
+    if(u.style.background === "rgba(0, 255, 0, 0.1)" && e.style.background === "rgba(0, 255, 0, 0.1)")
         form.submit();
 
 
