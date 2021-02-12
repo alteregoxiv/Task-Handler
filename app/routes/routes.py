@@ -24,7 +24,7 @@ def verifypass(request):
     hash_pwd  = email_pwd(user , email)
     print(hash_pwd)
     return app.render(request, 
-                      template("info.html",
+                      template("verify.html",
                                 user = user,
                                 email = email,
                                 hash = hash_pwd
