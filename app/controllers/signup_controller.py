@@ -13,8 +13,8 @@ def email_pwd(user, email):
     return hash_pwd
 
 
-def verify_pwd(user, email, hash_pwd, pwd):
-    pass
+def verify_pwd(hash_pwd, pwd):
+    return verify(pwd , hash_pwd)
 
 def adduser(user , email , hash_pwd):
-    pass
+    print(user , email , hash_pwd , sep = "\n")
