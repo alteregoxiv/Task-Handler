@@ -1,0 +1,29 @@
+#header{
+
+    font-family: 'Pangolin' , cursive;
+    font-size: large;
+    margin-bottom: 5%;
+    margin-top: 10%;
+
+}
+
+#sub{
+
+    border-radius: 7px;
+    font-size: larger;
+
+}
+
+input[type="password"] {
+    width: 50%;
+    height: 40px;
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.verpwd{
+
+    font-family: 'Pangolin' , cursive;
+
+}
