@@ -22,6 +22,7 @@ def verifypass(request):
     user = request.POST['user']
     email = request.POST['email']
     hash_pwd  = email_pwd(user , email)
+    print(hash_pwd)
     return app.render(request, 
                       template("info.html",
                                 user = user,
@@ -39,7 +40,9 @@ def signup(request):
     email = request.POST['email']
     hash_pwd = request.POST['hash']
     passwd = request.POST['password']
-    if not(verify_pwd(hash_pwd , passwd)):
+    print(hash_pwd)
+    print(passwd)
+    if not(verify_pwd(hash_pwd, passwd)):
         app.redirect(request , "/")
     else:
         adduser(user , email , hash_pwd)
