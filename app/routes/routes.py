@@ -76,3 +76,7 @@ def resend_pwd(request):
         data = dict(hash = hash_pwd),
         content_type = "application/json"
     )
+
+@app.get("/tasks")
+def tasks(request):
+    return app.render(request , template("tasks.html"))
