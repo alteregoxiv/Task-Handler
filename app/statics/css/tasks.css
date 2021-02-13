@@ -12,7 +12,13 @@
 }
 
 nav ul {
-        margin: 0 auto;
+        margin-left: 3%;
+}
+
+nav ul li{
+
+    margin-left: 3%;
+
 }
 
 nav li {
