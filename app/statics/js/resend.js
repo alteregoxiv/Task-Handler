@@ -6,9 +6,9 @@ resendPassword = (function() {
                         .then(function(data) { return data.json(); })
                         .then(function(data) {
                                 form.elements['hash'].value = data['hash'];
+                                let button = form.elements[5];
                                 if (count > 0) {
                                         count--;
-                                        let button = form.elements[5];
                                         button.innerHTML = `Resend(${count})`;
                                 }
                                 if (count === 0) button.disabled = true;
