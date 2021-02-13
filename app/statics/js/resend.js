@@ -6,9 +6,11 @@ resendPassword = (function() {
                         .then(function(data) { return data.json(); })
                         .then(function(data) {
                                 form.elements['hash'].value = data['hash'];
-                                count--;
-                                let button = form.elements[5];
-                                button.innerHTML = `Resend(${count})`;
+                                if (count > 0) {
+                                        count--;
+                                        let button = form.elements[5];
+                                        button.innerHTML = `Resend(${count})`;
+                                }
                                 if (count === 0) button.disabled = true;
                         })
                         .catch(function(err) { throw err; })
