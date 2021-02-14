@@ -49,6 +49,11 @@ def signup(request):
         return app.redirect(request , "/")
 
 
+@app.get("/forgot-password")
+def forgotpwd(request):
+    return app.render(request , template("forgotpwd.html"))
+
+
 @app.get("/validate")
 def validate(request):
     is_valid = "valid"

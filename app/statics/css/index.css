@@ -124,6 +124,12 @@ button{
 
 }
 
+#forgot-pwd{
+
+    margin-top: 2%;
+
+}
+
 @media screen and (max-width: 991px) {
         .left {
                 border: none;
@@ -142,5 +148,11 @@ button{
             display: inline-block;
             width: 25vw;
         
+        }
+
+        button{
+
+            font-size: 5vw!important;
+
         }
 }
