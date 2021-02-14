@@ -28,7 +28,13 @@ app.error_404 = my_error_404
 
 @app.get("/")
 def index(request):
-    return app.render(request , template("index.html"))
+    args = dict()
+    args['signup'] = request.GET.get('signup', 'unknown')
+    args['verification'] = request.GET.get('verification', 'unknown')
+    args['user'] = request.GET.get('user', 'valid')
+    return app.render(request,
+                      template("index.html", **args)
+                     )
 
 
 @app.post("/verify-password")
@@ -53,11 +59,11 @@ def signup(request):
     hash_pwd = request.POST['hash']
     passwd = request.POST['password']
     
-    if not(verify_pwd(hash_pwd, passwd)):
-        return app.redirect(request , "/")
+    if not verify_pwd(hash_pwd, passwd):
+        return app.redirect(request , "/?signup=failed")
     else:
         adduser(user , email , hash_pwd)
-        return app.redirect(request , "/")
+        return app.redirect(request, "/tasks")
 
 
 @app.get("/forgot-password")

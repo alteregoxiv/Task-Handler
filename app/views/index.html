@@ -83,8 +83,15 @@
 
                                                         <br>
                                                         <a id="forgot-pwd" href="/forgot-password">Forgot Password ?</a>
+                                                        
+                                                        {% if user == "invalid" %}
+                                                                <p>Invalid username or password</p>
+                                                        {% endif %}
 
-                                                        <p id="invalid-credentials"></p>
+                                                        {% if verification == "failed" %}
+                                                                <p>Unable to change password due to unverified user</p>
+                                                                <p>Make sure you entered correct passwod send to your email</p>
+                                                        {% endif %}
 
                                                         <br>
                                                         <button type="button" class="btn btn-dark" onclick="signinSubmit(this.form)">Login</button>
@@ -107,8 +114,12 @@
 
                                                         <p id="invalid-email"></p>
 
+                                                        {% if signup == "failed" %}
+                                                                <p>Unable to sign you up due to unverified email</p>
+                                                        {% endif %}
+
                                                         <br>
-                                                        <button type="button" class="btn btn-dark" onclick="signupSubmit(this.form)"">Sign Up</button>
+                                                        <button type="button" class="btn btn-dark" onclick="signupSubmit(this.form)">Sign Up</button>
 
                                                 </form>
 
