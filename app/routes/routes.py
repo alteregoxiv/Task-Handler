@@ -113,7 +113,7 @@ def resetpwd(request):
     return app.render_json(
 
                 request,
-                data = dict(),
+                data = dict(hash = hash_pwd),
                 content_type = "application/json"
 
             )
