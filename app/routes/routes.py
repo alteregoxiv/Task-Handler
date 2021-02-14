@@ -65,9 +65,18 @@ def forgotpwd(request):
     return app.render(request , template("forgotpwd.html"))
 
 
-# @app.post("/change-password")
-# def changepwd(request):
-#     pass
+@app.post("/change-password")
+def changepwd(request):
+    if 'user' not in request.POST and 'hash' not in request.POST and 'password' not in request.POST and 'newpassword' not in request.POST:
+        app.error_404(request)
+    user = request.POST['user']
+    hash_pwd = request.POST['hash']
+    pwd = request.POST['password']
+    newpwd = request.POST['newpassword']
+    
+    return app.redirect(request , "/")
+
+
 
 
 @app.get("/tasks")
