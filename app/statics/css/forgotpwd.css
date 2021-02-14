@@ -1,0 +1,30 @@
+#header{
+
+    font-family: 'Pangolin' , cursive;
+    font-size: xx-large;
+    margin-bottom: 15%;
+    margin-top: 10%;
+
+}
+
+/* #sub{ */
+button {
+
+    border-radius: 7px;
+    font-size: larger;
+
+}
+
+input[type="user"] {
+    width: 50%;
+    height: 44px;
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.verpwd{
+
+    font-family: 'Pangolin' , cursive;
+
+}
