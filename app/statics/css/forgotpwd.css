@@ -2,7 +2,7 @@
 
     font-family: 'Pangolin' , cursive;
     font-size: xx-large;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     margin-top: 10%;
 
 }
@@ -20,6 +20,7 @@ input{
     padding: 3px;
     border-radius: 10px;
     border: 1px solid black;
+    margin-bottom: 2%;
 }
 
 .verpwd{
