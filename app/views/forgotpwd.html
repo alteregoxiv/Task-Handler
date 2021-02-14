@@ -41,13 +41,13 @@
                         
                         <center>
 
-                                <form method="post" , action="/signup">
+                                <form method="post" , action="/change-password">
 
                                         <input type="text" name="user">
                                         <button type="button" class="btn btn-dark" id="sub1" onclick="resetPassword(this.form)">Reset</button>
                                         <input type="hidden" name="hash">
-                                        <input type="hidden" name="password" id="pwd" required placeholder="Password(check out your mail)">
-                                        <input type="hidden" name="newpassword" id="newpwd" required placeholder="Create a strong password">
+                                        <input type="required" name="password" id="pwd" required placeholder="Password(check out your mail)">
+                                        <input type="required" name="newpassword" id="newpwd" required placeholder="Create a strong password">
                                         <button type="submit" class="btn btn-dark" id="sub2">Change</button>
 
                                 </form>
