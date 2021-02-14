@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="/static/css/forgotpwd.css">
 </head>
 <body>
+        <script src="/static/js/forgotPassword.js"></script>
 
             <!-- Image and text -->
             <nav class="navbar navbar-dark bg-dark">
@@ -43,7 +44,7 @@
                                 <form method="post" , action="/signup">
 
                                         <input type="text" name="user">
-                                        <button type="button" class="btn btn-dark" id="sub1" onclick="">Reset</button>
+                                        <button type="button" class="btn btn-dark" id="sub1" onclick="resetPassword(this.form)">Reset</button>
                                         <input type="hidden" name="hash">
                                         <input type="hidden" name="password" id="pwd" required placeholder="Password(check out your mail)">
                                         <input type="hidden" name="newpassword" id="newpwd" required placeholder="Create a strong password">
