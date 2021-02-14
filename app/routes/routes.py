@@ -10,9 +10,21 @@ import itty3
 app = itty3.App()
 
 
+############# Custom 404 Error Handler ##################
+def my_error_404(request):
+    return app.render(
+                      request,
+                      template('error404.html'),
+                      status_code=404
+            )
+
+app.error_404 = my_error_404
+#########################################################
+
+
 @app.get("/")
 def index(request):
-    return app.render(request , template("index.html"))
+    return app.render(request, template("index.html"))
 
 
 @app.post("/verify-password")
