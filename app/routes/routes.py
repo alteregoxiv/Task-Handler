@@ -24,7 +24,7 @@ def my_error_404(request):
 app.error_404 = my_error_404
 #########################################################
 
-############# Views Serving Routes ######################
+############# View Serving Routes ######################
 
 @app.get("/")
 def index(request):
