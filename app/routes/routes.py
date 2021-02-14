@@ -3,7 +3,11 @@ All routes of app is defined
 """
 
 from taskHandler.app.utils.template import template
-from taskHandler.app.controllers.signup_controller import email_pwd , verify_pwd , adduser
+from taskHandler.app.controllers.signup_controller import (
+    email_pwd,
+    verify_pwd,
+    adduser
+)
 
 import itty3
 
@@ -20,6 +24,7 @@ def my_error_404(request):
 app.error_404 = my_error_404
 #########################################################
 
+############# Views Serving Routes ######################
 
 @app.get("/")
 def index(request):
@@ -28,9 +33,6 @@ def index(request):
 
 @app.post("/verify-password")
 def verifypass(request):
-    if 'user' not in request.POST and 'email' not in request.POST:
-        app.error_404(request)
-
     user = request.POST['user']
     email = request.POST['email']
     hash_pwd  = email_pwd(email)
@@ -46,8 +48,6 @@ def verifypass(request):
 
 @app.post("/signup")
 def signup(request):
-    if 'user' not in request.POST and 'email' not in request.POST and 'hash' not in request.POST and 'pass' not in request.POST:
-        app.error_404(request)
     user = request.POST['user']
     email = request.POST['email']
     hash_pwd = request.POST['hash']
@@ -67,8 +67,6 @@ def forgotpwd(request):
 
 @app.post("/change-password")
 def changepwd(request):
-    if 'user' not in request.POST and 'hash' not in request.POST and 'password' not in request.POST and 'newpassword' not in request.POST:
-        app.error_404(request)
     user = request.POST['user']
     hash_pwd = request.POST['hash']
     pwd = request.POST['password']
@@ -77,12 +75,14 @@ def changepwd(request):
     return app.redirect(request , "/")
 
 
-
-
 @app.get("/tasks")
 def tasks(request):
     return app.render(request , template("tasks.html"))
 
+
+#########################################################
+
+############## JSON Serving Routes ######################
 
 @app.get("/validate")
 def validate(request):
@@ -96,13 +96,6 @@ def validate(request):
 
 @app.get("/resend-password")
 def resend_pwd(request):
-    if 'email' not in request.GET:
-        return app.render_json(
-            request,
-            data = dict(),
-            content_type = "application/json"
-        )
-
     email = request.GET['email']
     hash_pwd = email_pwd(email)
     
