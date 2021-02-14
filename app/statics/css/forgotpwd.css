@@ -11,11 +11,10 @@
 button {
 
     border-radius: 7px;
-    font-size: larger;
 
 }
 
-input[type="user"] {
+input{
     width: 50%;
     height: 44px;
     padding: 3px;
@@ -26,5 +25,18 @@ input[type="user"] {
 .verpwd{
 
     font-family: 'Pangolin' , cursive;
+
+}
+
+#sub2{
+
+    display: none;
+    font-size: larger;
+
+}
+
+#sub1{
+
+    font-size: larger;
 
 }
