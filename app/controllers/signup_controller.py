@@ -16,5 +16,3 @@ def email_pwd(email):
 def verify_pwd(hash_pwd, pwd):
     return verify(pwd , hash_pwd)
 
-def adduser(user , email , hash_pwd):
-    print(user , email , hash_pwd , sep = "\n")

@@ -6,7 +6,9 @@ from taskHandler.app.utils.template import template
 from taskHandler.app.controllers.signup_controller import (
     email_pwd,
     verify_pwd,
-    adduser
+)
+from taskHandler.app.controllers.user_controller import (
+    adduser,
 )
 
 import itty3
@@ -119,9 +121,7 @@ def resetpwd(request):
     hash_pwd = email_pwd(email)
 
     return app.render_json(
-
                 request,
                 data = dict(hash = hash_pwd),
                 content_type = "application/json"
-
-            )
+    )
