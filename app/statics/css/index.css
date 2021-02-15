@@ -147,6 +147,10 @@ button{
     cursor: pointer;
 }
 
+.modal {
+        display: block;
+}
+
 @media screen and (max-width: 991px) {
         .left {
                 border: none;
