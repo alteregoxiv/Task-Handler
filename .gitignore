@@ -129,6 +129,7 @@ dmypy.json
 .pyre/
 
 
+*.table
 *.db
 start
 gitty
