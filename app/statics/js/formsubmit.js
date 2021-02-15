@@ -1,6 +1,3 @@
-"rgba(240, 0, 0, 0.1) none repeat scroll 0% 0%"
-"rgba(0, 0, 0, 0) none repeat scroll 0% 0%"
-
 
 function validatePassword(self){
 
@@ -76,3 +73,14 @@ function signupSubmit(form){
 
 
 }
+
+
+document.addEventListener('keypress', function(event) {
+        if (event.keyCode !== 13)
+                return;
+        let button = document.getElementsByTagName('button');
+        if (button[0].parentElement.parentElement.classList.contains('active'))
+                button[0].click();
+        else
+                button[1].click();
+})

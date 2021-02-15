@@ -70,6 +70,7 @@
                                                         <label for="username">Username:-</label>
                                                         <input type="text" name="user" id="username" placeholder="username"  onblur="validateUserName(this, 'invalid-username')">
 
+
                                                         <p id="invalid-username"></p>
 
                                                         <br>
@@ -105,12 +106,14 @@
                                                 <form method="post" action="/verify-password">
                                                         <label for="user">Username:-</label>
                                                         <input type="text" name="user" id="user" placeholder="username"  onblur="validateSignUpUserName(this)">
+                                                        <div class="spinner-grow" role="status"></div>
 
                                                         <p id="invalid-user"></p>
 
                                                         <br>
                                                         <label for="email">Email:-</label>
                                                         <input type="email" name="email" id="email" placeholder="youremail@provider.com"   onblur="validateEmail(this)">
+                                                        <div class="spinner-grow" role="status"></div>
 
                                                         <p id="invalid-email"></p>
 
@@ -134,6 +137,7 @@
         </main>
         <script>
                 function clearFields() {
+                        document.forms[0].reset();               
                         document.forms[1].reset();               
                 }                                                                                                                             
                 function tabSwitcher(index) {

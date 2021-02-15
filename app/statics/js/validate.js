@@ -9,6 +9,12 @@ function validateSignUpUserName(self) {
                 return;
         }
 
+        console.log(self.style.background)
+        if(self.style.background.includes("rgba(0, 255, 0, 0.1)"))
+                alert('yo');
+
+        let spinner = document.getElementsByClassName('spinner-grow')[0];
+        spinner.style.display = 'inline-block';
         fetch("/validate?username=" + self.value)
                 .then(function(data) {
                         return data.json();
@@ -22,6 +28,7 @@ function validateSignUpUserName(self) {
                                 );
                         else 
                                 showSuccess(self);
+                        spinner.style.display = 'none';
                 })
                 .catch(function(err) {
                         throw err;
@@ -40,6 +47,11 @@ function validateEmail(self) {
                 return;
         }
 
+        if(self.style.background.includes("rgba(0, 255, 0, 0.1)"))
+                return;
+
+        let spinner = document.getElementsByClassName('spinner-grow')[1];
+        spinner.style.display = 'inline-block';
         fetch("/validate?email=" + self.value)
                 .then(function(data) {
                         return data.json();
@@ -53,6 +65,7 @@ function validateEmail(self) {
                                 );
                         else 
                                 showSuccess(self);
+                        spinner.style.display = 'none';
                 })
                 .catch(function(err) {
                         throw err;
@@ -66,7 +79,8 @@ function validateUserName(self, id) {
                 showWarning(self, warning, 'Username should be a single word');
                 return false;
         }
-        hideWarning(self, warning);
+        self.style.background.includes('rgba(0, 255, 0, 0.1)')
+                ? "": hideWarning(self, warning);
         return true;
 }
 

@@ -130,6 +130,10 @@ button{
 
 }
 
+.spinner-grow {
+        display: none;
+}
+
 @media screen and (max-width: 991px) {
         .left {
                 border: none;
