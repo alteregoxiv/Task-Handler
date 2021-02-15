@@ -86,10 +86,12 @@
                                                         <a id="forgot-pwd" href="/forgot-password">Forgot Password ?</a>
                                                         
                                                         {% if user == "invalid" %}
+                                                                <div class="overlay"></div>
                                                                 <p>Invalid username or password</p>
                                                         {% endif %}
 
                                                         {% if verification == "failed" %}
+                                                                <div class="overlay"></div>
                                                                 <p>Unable to change password due to unverified user</p>
                                                                 <p>Make sure you entered correct passwod send to your email</p>
                                                         {% endif %}
