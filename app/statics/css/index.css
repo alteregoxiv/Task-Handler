@@ -104,6 +104,10 @@ form p {
 
 }
 
+.signin a {
+        color: #3f3f3f;
+}
+
 label:not(#days) {
 
     display: inline-block;

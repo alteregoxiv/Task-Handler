@@ -120,7 +120,7 @@
                                                         {% if verification == "failed" %}
                                                                 <div class="overlay two"></div>
                                                                 <!-- <p>Unable to change password due to unverified user</p>
-                                                                <p>Make sure you entered correct passwod send to your email</p> -->
+                                                                <p>Make sure you entered correct password send to your email</p> -->
 
                                                                 <div class="modal two" tabindex="-1" role="dialog">
                                                                         <div class="modal-dialog" role="document">
@@ -149,7 +149,7 @@
                                         {% if signup == "failed" %}
                                         <div class="signup active">
                                         {% else %}
-                                        <div class="signup"></div>
+                                        <div class="signup">
                                         {% endif %}
 
                                                 <form method="post" action="/verify-password">
