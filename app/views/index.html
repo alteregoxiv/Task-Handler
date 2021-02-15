@@ -86,14 +86,14 @@
                                                         <a id="forgot-pwd" href="/forgot-password">Forgot Password ?</a>
                                                         
                                                         {% if user == "invalid" %}
-                                                                <div class="overlay"></div>
+                                                                <div class="overlay one"></div>
                                                                 <!-- <div class="modal"><p>Invalid username or password</p></div> -->
 
-                                                                <div class="modal" tabindex="-1" role="dialog">
+                                                                <div class="modal one" tabindex="-1" role="dialog">
                                                                         <div class="modal-dialog" role="document">
                                                                           <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="hideError('one')">
                                                                                 <span aria-hidden="true">&times;</span>
                                                                               </button>
                                                                             </div>
@@ -106,9 +106,25 @@
                                                         {% endif %}
 
                                                         {% if verification == "failed" %}
-                                                                <div class="overlay"></div>
-                                                                <p>Unable to change password due to unverified user</p>
-                                                                <p>Make sure you entered correct passwod send to your email</p>
+                                                                <div class="overlay two"></div>
+                                                                <!-- <p>Unable to change password due to unverified user</p>
+                                                                <p>Make sure you entered correct passwod send to your email</p> -->
+
+                                                                <div class="modal two" tabindex="-1" role="dialog">
+                                                                        <div class="modal-dialog" role="document">
+                                                                          <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="hideError('two')">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                              </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>Unable to change password due to unverified user</p>
+                                                                                <p>Make sure you entered correct passwod send to your email</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                </div>
                                                         {% endif %}
 
                                                         <br>
@@ -135,8 +151,23 @@
                                                         <p id="invalid-email"></p>
 
                                                         {% if signup == "failed" %}
-                                                                <div class="overlay"></div>
-                                                                <p>Unable to sign you up due to unverified email</p>
+                                                                <div class="overlay three"></div>
+                                                                <!-- <p>Unable to sign you up due to unverified email</p> -->
+
+                                                                <div class="modal three" tabindex="-1" role="dialog">
+                                                                        <div class="modal-dialog" role="document">
+                                                                          <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="hideError('Three')">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                              </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>Unable to sign you up due to unverified email</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                </div>
                                                         {% endif %}
 
                                                         <br>
@@ -189,6 +220,13 @@
 
 
                         }
+                }
+
+                function hideError(number){
+
+                        for(i of document.getElementsByClassName(number))
+                                i.style.display = "none";
+
                 }
                         
         </script>
