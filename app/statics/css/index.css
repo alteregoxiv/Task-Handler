@@ -151,6 +151,12 @@ button{
         display: block;
 }
 
+.modal p{
+
+    color: #0f0f0f;
+
+}
+
 @media screen and (max-width: 991px) {
         .left {
                 border: none;
