@@ -10,6 +10,7 @@ from taskHandler.app.controllers.signup_controller import (
 from taskHandler.app.controllers.user_controller import (
     adduser,
 )
+from taskHandler.app.controllers.tasks_controller import *
 
 import itty3
 
