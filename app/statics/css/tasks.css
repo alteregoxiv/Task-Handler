@@ -27,7 +27,28 @@ body {
    margin-top: 5%;
    margin-left: 7%;
    margin-right: 7%;
-   margin-bottom: 7%;
    font-size: x-large;
 
+}
+
+summary {
+        background-color: rgb(43, 43, 43);
+        color: rgb(255, 255, 255);
+        margin-bottom: 15px;
+        border-radius: 10px;
+        text-align: left;
+        font-weight: bold;
+        padding: .5%;
+        cursor: pointer;
+        transition: all 0.8s ease-out;
+}
+
+details[open] summary {
+        margin-bottom: 25px;
+        box-shadow: 0px 3px 8px 6px rgba(30, 30, 30, .3);
+}
+
+details[open] p {
+        border-left: 1px solid rgba(10, 10, 10, .2);
+        padding: .5%;
 }
