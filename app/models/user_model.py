@@ -17,13 +17,14 @@ db.commit()
 
 
 def create_user(username, email, passwd, cookie_pass):
-    db.users.insert(
-        username = username,
-        email = email,
-        password = passwd,
-        cookie_pass = cookie_pass
-    )
+    _id = db.users.insert(
+            username = username,
+            email = email,
+            password = passwd,
+            cookie_pass = cookie_pass
+          )
     db.commit()
+    return _id
 
 
 def get_user_by(username = '', email = '', _id = ''):

@@ -67,8 +67,15 @@ def signup(request):
     if not verify_pwd(hash_pwd, passwd):
         return app.redirect(request , "/?signup=failed")
     else:
-        adduser(user , email , hash_pwd)
-        return app.redirect(request, "/tasks")
+        response = itty3.HttpResponse(
+            body = "",
+            headers = {"Location": "/tasks"},
+            status_code = 302
+        )
+
+        cookie = adduser(user , email , hash_pwd)
+        response.set_cookie("tokn", cookie)
+        return response
 
 
 @app.get("/forgot-password")
