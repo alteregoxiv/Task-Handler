@@ -11,7 +11,7 @@ function validateSignUpUserName(self) {
 
         console.log(self.style.background)
         if(self.style.background.includes("rgba(0, 255, 0, 0.1)"))
-                alert('yo');
+                return;
 
         let spinner = document.getElementsByClassName('spinner-grow')[0];
         spinner.style.display = 'inline-block';

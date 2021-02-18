@@ -2,7 +2,13 @@
 Works on user related data
 """
 
-import taskHandler.app.models.user_model
+from taskHandler.app.utils.passwd import genCode
+from taskHandler.app.utils.hash import hashed, verify
+from taskHandler.app.models.user_model import create_user
+
 
 def adduser(user , email , hash_pwd):
-    print(user , email , hash_pwd , sep = "\n")
+    cookie_pass = genCode(password = False)
+    cookie_pass_hash = hashed(cookie_pass)
+    create_user(user, email, hash_pwd, cookie_pass_hash)
+    return cookie_pass_hash

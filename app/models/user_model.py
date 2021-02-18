@@ -14,3 +14,22 @@ db.define_table('users',
               )
 
 db.commit()
+
+
+def create_user(username, email, passwd, cookie_pass):
+    db.users.insert(
+        username = username,
+        email = email,
+        password = passwd,
+        cookie_pass = cookie_pass
+    )
+    db.commit()
+
+
+def get_user_by(username = '', email = '', _id = ''):
+    if username:
+        return db(db.users.username == username).select().as_list()
+    if email:
+        return db(db.users.email == email).select().as_list()
+    if _id:
+        return db(db.users.id == _id).select().as_list()

@@ -6,6 +6,8 @@ from taskHandler.app.utils.template import template
 from taskHandler.app.controllers.signup_controller import (
     email_pwd,
     verify_pwd,
+    username_avl,
+    email_avl
 )
 from taskHandler.app.controllers.user_controller import (
     adduser,
@@ -95,7 +97,11 @@ def tasks(request):
 
 @app.get("/validate")
 def validate(request):
-    is_valid = "valid"
+    is_valid = ""
+    if 'username' in request.GET:
+        is_valid = "valid" if username_avl(request.GET['username']) else "invalid"
+    if 'email' in request.GET:
+        is_valid = "valid" if email_avl(request.GET['email']) else "invalid"
     return app.render_json(
         request,
         data = dict(valid = is_valid),
