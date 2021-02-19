@@ -27,10 +27,20 @@ def create_user(username, email, passwd, cookie_pass):
     return _id
 
 
-def get_user_by(username = '', email = '', _id = ''):
+def get_user_data_by(username = '', email = ''):
     if username:
         return db(db.users.username == username).select().as_list()
     if email:
         return db(db.users.email == email).select().as_list()
-    if _id:
-        return db(db.users.id == _id).select().as_list()
+
+
+def get_a_user_data_by( username = '',
+                        email = '',
+                        _id = '',
+                        which = ''):
+    if username:
+        if which == "password":
+            return db(db.users.username == username).select(db.users.password).first().as_dict()
+
+
+
