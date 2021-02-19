@@ -11,4 +11,4 @@ def adduser(user , email , hash_pwd):
     cookie_pass = genCode(password = False)
     cookie_pass_hash = hashed(cookie_pass)
     _id = create_user(user, email, hash_pwd, cookie_pass_hash)
-    return '%s%s%s' %(cookie_pass_hash, _id, len(str(_id)))
+    return '%s%s%s' %(cookie_pass, _id, len(str(_id)))

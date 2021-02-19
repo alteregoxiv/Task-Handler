@@ -5,7 +5,7 @@ Password generation, hashing and verification
 from taskHandler.app.utils.hash import hashed, verify
 from taskHandler.app.utils.passwd import genCode
 from taskHandler.app.utils.mail import mailSend
-from taskHandler.app.models.user_model import get_user_by
+from taskHandler.app.models.user_model import get_user_data_by
 
 def email_pwd(email):
     pwd = genCode()
@@ -19,8 +19,8 @@ def verify_pwd(hash_pwd, pwd):
 
 
 def username_avl(username):
-    return len(get_user_by(username = username)) == 0
+    return len(get_user_data_by(username = username)) == 0
 
 
 def email_avl(email):
-    return len(get_user_by(email = email)) == 0
+    return len(get_user_data_by(email = email)) == 0
