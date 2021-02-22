@@ -11,8 +11,11 @@ from taskHandler.app.controllers.signup_controller import (
 )
 from taskHandler.app.controllers.user_controller import (
     adduser,
+    verify_user,
 )
 from taskHandler.app.controllers.tasks_controller import *
+
+from datetime import datetime, timedelta
 
 import itty3
 
@@ -74,7 +77,7 @@ def signup(request):
         )
 
         cookie = adduser(user , email , hash_pwd)
-        response.set_cookie("tokn", cookie)
+        response.set_cookie("tokn", cookie, httponly = True, samesite = itty3.SAME_SITE_LAX)
         return response
 
 
@@ -82,6 +85,29 @@ def signup(request):
 def forgotpwd(request):
     return app.render(request , template("forgotpwd.html"))
 
+
+@app.post("/login")
+def login(request):
+    user = request.POST['user']
+    password = request.POST['password']
+    remember_me = request.POST.get('remember', 'off')
+    remember_me = True if remember_me == 'on' else False
+    cookie = verify_user(user, password)
+    if not cookie:
+        return app.redirect(request, '/?user=invalid')
+
+    response = itty3.HttpResponse(
+        body = "",
+        headers = {"Location": "/tasks"},
+        status_code = 307
+    )
+    if not remember_me:
+        response.set_cookie("tokn", cookie, httponly = True, samesite = itty3.SAME_SITE_LAX)
+    else:
+        expires = datetime.now() + timedelta(days = 1)
+        response.set_cookie("tokn", cookie,  expires = expires, httponly = True, samesite = itty3.SAME_SITE_LAX)
+    return response
+        
 
 @app.post("/change-password")
 def changepwd(request):
@@ -94,6 +120,11 @@ def changepwd(request):
 
 
 @app.get("/tasks")
+def tasks(request):
+    return app.render(request , template("tasks.html"))
+
+
+@app.post("/tasks")
 def tasks(request):
     return app.render(request , template("tasks.html"))
 

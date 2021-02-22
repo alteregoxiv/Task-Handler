@@ -27,6 +27,11 @@ def create_user(username, email, passwd, cookie_pass):
     return _id
 
 
+def update_cookie_pass(cookie_pass_hash, _id):
+    db(db.users.id == _id).update(cookie_pass = cookie_pass_hash)
+    db.commit()
+
+
 def get_user_data_by(username = '', email = ''):
     if username:
         return db(db.users.username == username).select().as_list()
@@ -40,7 +45,11 @@ def get_a_user_data_by( username = '',
                         which = ''):
     if username:
         if which == "password":
-            return db(db.users.username == username).select(db.users.password).first().as_dict()
+           rows = db(db.users.username == username).select(db.users.password, db.users.id)
 
+           if rows:
+               return rows.first().as_dict()
+           else:
+               return rows
 
 

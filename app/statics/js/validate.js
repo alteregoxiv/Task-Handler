@@ -13,6 +13,7 @@ function validateSignUpUserName(self) {
         if(self.style.background.includes("rgba(0, 255, 0, 0.1)"))
                 return;
 
+        // move it to seperate function and invoke for onchange also
         let spinner = document.getElementsByClassName('spinner-grow')[0];
         spinner.style.display = 'inline-block';
         fetch("/validate?username=" + self.value)
@@ -50,9 +51,10 @@ function validateEmail(self) {
         if(self.style.background.includes("rgba(0, 255, 0, 0.1)"))
                 return;
 
+        // move it to seperate function and invoke for onchange also
         let spinner = document.getElementsByClassName('spinner-grow')[1];
         spinner.style.display = 'inline-block';
-        fetch("/validate?email=" + self.value)
+        fetch("/validate?email=" + self.value.toLowerCase())
                 .then(function(data) {
                         return data.json();
                 })
@@ -63,8 +65,10 @@ function validateEmail(self) {
                                         warning,
                                         "Email already registered"
                                 );
-                        else 
+                        else { 
+                                hideWarning(self, warning);
                                 showSuccess(self);
+                        }
                         spinner.style.display = 'none';
                 })
                 .catch(function(err) {

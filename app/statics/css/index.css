@@ -60,6 +60,11 @@ input[type="password"] {
         border: 1px solid black;
 }
 
+
+input[type="email"] {
+        text-transform: lowercase;
+}
+
 .signin,
 .signup {
     font-family: 'Pangolin' , cursive;

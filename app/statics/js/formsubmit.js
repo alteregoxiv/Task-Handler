@@ -1,4 +1,3 @@
-
 function validatePassword(self){
 
     if(self.value !== ""){
