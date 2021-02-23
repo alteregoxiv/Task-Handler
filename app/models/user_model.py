@@ -32,6 +32,10 @@ def update_cookie_pass(cookie_pass_hash, _id):
     db.commit()
 
 
+def update_pass(pass_hash, _id):
+    pass
+
+
 def get_user_data_by(username = '', email = ''):
     if username:
         return db(db.users.username == username).select().as_list()
@@ -52,4 +56,5 @@ def get_a_user_data_by( username = '',
            else:
                return rows
 
-
+        elif which == "email":
+            pass

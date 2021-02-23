@@ -26,3 +26,7 @@ def verify_user(username, password):
         update_cookie_pass(cookie_pass_hash, data['id'])
         return '%s%s%s' %(cookie_pass, data['id'], len(str(data['id'])))
     return False
+
+
+def reset_password():
+    pass
